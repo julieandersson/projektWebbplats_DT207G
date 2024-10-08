@@ -1,9 +1,46 @@
 /* LAYOUT SCSS */
 
+@use "base";
+@use "component";
+
+/* Generell styling för body och header */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: base.$background-color;
+    font-family: base.$standard-font;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 80px;
+    background-color: base.$header-color;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3em;
+    color: base.$standard-white;
+    text-align: center;
+    opacity: 80%;
+    padding-top: 200px;
+}
+
 /* Media queries för större skärmar */
 @media only screen and (min-width: 990px) {
     header {
-        padding: 0 3em;
+        padding: 0 8em;
     }
 
     .menu-btn {
@@ -22,17 +59,20 @@
         display: block !important;
         position: static;
         box-shadow: 0 0px 0px;
-        height: auto;
-        font-size: 1.4em;
+        height: 80px;
+        font-size: 1.3em;
         width: auto;
     }
 
     nav ul {
         height: 100%;
+        padding: 20px;
     }
 
     nav li {
         display: inline;
         padding: 1.2em 0;
+        
     }
+    
 }
