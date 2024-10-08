@@ -1,0 +1,21 @@
+/* Fixerad position för bakgrundsbilden över hela fönstret */
+.background-picture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Bakgrundsbilden placeras bakom innehållet */
+    overflow: hidden; /* Döljer överflöd av bild utanför fönstret */
+}
+
+/* Anpassning av bakgrundsbildens storlek och stil */
+#background-img {
+    display: block; /* Ser till att elementet beter sig som en blocknivå */
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* Täcker hela fönstret utan att ändra bildförhållandet */
+    filter: brightness(40%); /* Minskar ljusstyrkan för bättre textläsbarhet ovanpå */
+}
