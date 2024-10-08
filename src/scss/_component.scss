@@ -1,3 +1,106 @@
+/* COMPONENT SCSS */
+
+/* Meny styling för mobil */
+nav {
+    background-color: rgb(44, 90, 117);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.71);
+    font-size: 1.4em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    display: none;
+}
+
+nav ul {
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav li {
+    padding: 0.8em 0;
+    width: 100%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 1em;
+}
+
+nav li:hover {
+    background-color: rgb(27, 56, 72);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Meny knapp, öppna meny */
+.menu-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: rgb(44, 90, 117);
+    border: white solid 2px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 5px;
+}
+
+.open {
+    margin: 0 1em;
+}
+
+.menu-btn:hover {
+    background-color: rgb(27, 56, 72);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.421);
+}
+
+.menu-icon {
+    margin-right: 10px;
+}
+
+/* de tre svarta strecken (hamburg-icon) */
+.bars {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+.menu-text {
+    font-size: 1.2em;
+    color: white;
+}
+
+/* Meny knapp, stäng */
+.close {
+    margin: 0;
+    padding: 5px 5px;
+
+}
+
+/* Roterar två lodräda streck, till ett kryss */
+.cross1 {
+    width: 25px;
+    transform: rotate(45deg);
+    position: relative;
+    top: 5px;
+}
+
+.cross2 {
+    width: 25px;
+    transform: rotate(135deg);
+    position: relative;
+    top: -3px;
+}
+
+
 /* Fixerad position för bakgrundsbilden över hela fönstret */
 .background-picture {
     position: fixed;

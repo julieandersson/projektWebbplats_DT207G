@@ -1,0 +1,38 @@
+/* LAYOUT SCSS */
+
+/* Media queries för större skärmar */
+@media only screen and (min-width: 990px) {
+    header {
+        padding: 0 3em;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    #open-menu {
+        display: none !important;
+    }
+
+    header {
+        position: static;
+    }
+
+    nav {
+        display: block !important;
+        position: static;
+        box-shadow: 0 0px 0px;
+        height: auto;
+        font-size: 1.4em;
+        width: auto;
+    }
+
+    nav ul {
+        height: 100%;
+    }
+
+    nav li {
+        display: inline;
+        padding: 1.2em 0;
+    }
+}
