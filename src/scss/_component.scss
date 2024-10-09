@@ -132,3 +132,8 @@ nav li:hover {
     object-fit: cover; /* Täcker hela fönstret utan att ändra bildförhållandet */
     filter: brightness(40%); /* Minskar ljusstyrkan för bättre textläsbarhet ovanpå */
 }
+
+footer {
+    background-color: base.$header-color;
+    color: base.$standard-white;
+}
