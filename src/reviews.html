@@ -47,6 +47,30 @@
          <img id="background-img" src="images/projekt1.jpg" alt="Ett bord uppdukat med god mat">
     </div>
     <main>
+        <h2>Recensioner</h2>
+        <p>
+            Vi värdesätter våra gästers upplevelser på Nami Sushi och välkomnar dina synpunkter. Har du besökt någon av våra restauranger? 
+            Dela gärna med dig av din upplevelse genom att fylla i formuläret nedan. Din feedback hjälper oss att ständigt förbättra oss, och vi ser fram emot att få hälsa dig välkommen igen.
+        </p><br>
+
+        <h3>Lägg till din recension</h3>
+        <form id="review-form">
+            <label for="name">NAMN:</label>
+            <input type="text" id="name" name="name" placeholder="Ange ditt namn" required>
+
+            <label for="comment">KOMMENTAR:</label>
+            <textarea id="comment" name="comment" placeholder="Skriv din recension här" required></textarea>
+
+            <label for="rating">BETYG:</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" placeholder="Betyg (1-5)" required>
+
+            <button type="submit">SKICKA RECENSION</button>
+        </form>
+
+        <h2>Gästernas omdömen</h2>
+
+        <div id="loading-message">Laddar recensioner, vänligen vänta...</div> <!-- Laddningsmeddelande -->
+        <div id="reviews-container"></div>
     </main>
 
     <footer class="footer">

@@ -1,6 +1,7 @@
 /* COMPONENT SCSS */
 
 @use "base";
+@import 'form-styles'; // Importerar styling för formulär
 
 /* Meny styling för mobil*/
 nav {
@@ -254,57 +255,52 @@ footer {
 /* FORMULÄR FÖR BOKA BORD */
 
 #booking-form {
-    background-color: base.$form-color;
-    padding: 30px;
-    border-radius: 10px; 
-    box-shadow: base.$standard-shadow;
-    max-width: 400px; 
-    margin: 20px auto;
+    @extend .form-style;
+    max-width: 400px; // Justering för bokningsformuläret
 }
 
 #booking-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: base.$standard-white;
+    @extend .form-label;
 }
 
 #booking-form input,
 #booking-form textarea {
-    width: 95%; 
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid base.$menu-color;
-    border-radius: 5px;
-    font-size: 1em;
-    box-shadow: inset base.$standard-shadow;
-}
-#booking-form input:focus,
-#booking-form textarea:focus {
-    outline: none;
-    border: 1px solid #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    @extend .form-input;
 }
 
 #booking-form button {
-    background-color: #007bff;
-    color: base.$standard-white;
-    border: none;
-    border-radius: 5px;
-    padding: 12px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 1.1em;
+    @extend .form-button;
 }
 
-#booking-form button:hover {
-    background-color: #0056b3;
+/* FORMULÄR FÖR ATT SKRIVA RECENSION */
+
+#review-form {
+    @extend .form-style;
 }
 
-#booking-message {
-    margin-top: 20px;
-    font-weight: bold;
-    text-align: center;
+#review-form label {
+    @extend .form-label;
+}
+
+#review-form input[type="text"],
+#review-form input[type="email"],
+#review-form input[type="number"],
+#review-form textarea {
+    @extend .form-input;
+}
+
+#review-form textarea {
+    height: 80px; // Specifik justering för textarea
+}
+
+#review-form input[type="number"] {
+    width: 95px; // Specifik justering för betygsfältet
+    height: 15px;
+}
+
+#review-form button {
+    @extend .form-button;
+    display: block;
 }
 
 
@@ -353,6 +349,26 @@ footer {
     top: 2px;
     left: 6px;
 }
+
+/* STYLING FÖR RECENSIONER */
+
+#reviews-container .review-block {
+    background-color: base.$standard-white;
+    border-radius: 8px; 
+    box-shadow: base.$standard-shadow;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+#reviews-container .review-block h4 {
+    margin: 0; 
+    font-size: 1.2em;
+}
+
+#reviews-container .review-block p {
+    margin: 8px 0;
+}
+
 
 
 

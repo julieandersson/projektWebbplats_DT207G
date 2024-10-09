@@ -1,0 +1,47 @@
+/* Standard-styling för formulären på webbplatsen */
+
+.form-style {
+    background-color: base.$form-color;
+    padding: 30px;
+    border-radius: 10px; 
+    box-shadow: base.$standard-shadow;
+    max-width: 600px; 
+    margin: 20px auto;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: base.$standard-white;
+}
+
+.form-input {
+    width: 95%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid base.$menu-color;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: inset base.$standard-shadow;
+}
+
+.form-input:focus {
+    outline: none;
+    border: 1px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-button {
+    background-color: #007bff;
+    color: base.$standard-white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+}
