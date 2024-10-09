@@ -15,6 +15,7 @@ nav {
     height: 100vh;
     width: 200px;
     display: none;
+    z-index: 1000;
 }
 
 nav ul {
@@ -136,4 +137,63 @@ nav li:hover {
 footer {
     background-color: base.$header-color;
     color: base.$standard-white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+
+    .footer-column {
+        flex: 1;
+        margin: 0 15px;
+
+        h4 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        p {
+            margin: 4px 0;
+
+        }
+
+        li {
+            margin: 15px 0;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: base.$standard-white;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
+
+/* KNAPPAR PÅ STARTSIDAN */
+
+#navigateToMenu,
+#navigateToBooking {
+    display: block; 
+    width: 300px;
+    margin: 10px auto;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    color: base.$standard-white;
+    background-color: base.$header-color;
+    opacity: 90%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease; /* mjuk övergångseffekt */
+}
+
+#navigateToMenu:hover,
+#navigateToBooking:hover {
+    background-color: base.$header-color-hover;
+    transform: translateY(-2px); /* Låter knappen lyftas lite när musen är över den */
+}
+
+

@@ -32,10 +32,10 @@ header {
 
 main {
     background-color: base.$main-color;
-    width: 80%;
+    width: 70%;
     border-radius: 10px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 25 auto;
+    padding: 30px;
     opacity: 70%;
 }
 
@@ -54,7 +54,9 @@ h3 {
 
 p {
     font-size: 1.1em;
-    line-height: 1.8em;
+    line-height: 2em;
+    max-width: 80ch;
+    margin: 0 auto;
 }
 
 /* Media queries för större skärmar */

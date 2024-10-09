@@ -24,3 +24,12 @@ function toggleMenu() {
         navMenuEl.style.display = "none";
     }
 }
+
+// Navigeringsknappar på startsidan
+document.getElementById('navigateToMenu').addEventListener('click', function() {
+    window.location.href = 'menu.html'; // Navigerar till menu.html
+});
+
+document.getElementById('navigateToBooking').addEventListener('click', function() {
+    window.location.href = 'booking.html'; // Navigerar till booking.html
+});
