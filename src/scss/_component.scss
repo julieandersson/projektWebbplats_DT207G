@@ -134,6 +134,17 @@ nav li:hover {
     filter: brightness(40%); /* Minskar ljusstyrkan för bättre textläsbarhet ovanpå */
 }
 
+/* BILDER PÅ STARTSIDAN */
+
+.indexPicture {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+/* FOOTER */
+
 footer {
     background-color: base.$header-color;
     color: base.$standard-white;
@@ -141,6 +152,7 @@ footer {
     display: flex;
     justify-content: space-between;
     text-align: left;
+    margin-top: 25px;
 
     .footer-column {
         flex: 1;
