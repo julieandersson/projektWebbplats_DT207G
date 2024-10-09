@@ -33,3 +33,12 @@ document.getElementById('navigateToMenu').addEventListener('click', function() {
 document.getElementById('navigateToBooking').addEventListener('click', function() {
     window.location.href = 'booking.html'; // Navigerar till booking.html
 });
+
+// Skrollar upp på startsidan vid klick av logo i footern
+document.getElementById('scrollToTop').addEventListener('click', function(event) {
+    event.preventDefault(); // Förhindrar standardlänk-beteendet
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Skapar en smidig scroll-effekt
+    });
+});

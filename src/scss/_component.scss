@@ -193,6 +193,11 @@ footer {
         img {
             width: 150px;
             height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.1); /* Förstorar logotypen med 10% när man hovrar */
         }
     }
 
@@ -213,13 +218,13 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer; 
-    transition: background-color 0.3s ease, transform 0.2s ease; /* mjuk övergångseffekt */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* mjuk övergångseffekt */
 }
 
 #navigateToMenu:hover,
 #navigateToBooking:hover {
     background-color: base.$header-color-hover;
-    transform: translateY(-2px); /* Låter knappen lyftas lite när musen är över den */
+    transform: scale(1.1); /* Förstorar knapparna med 10% när man hovrar */
 }
 
 
