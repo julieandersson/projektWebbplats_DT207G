@@ -44,8 +44,20 @@ main {
     border-radius: 10px;
     margin: 25 auto;
     padding: 30px;
-    opacity: 70%;
 }
+
+#menu-container {
+    background-color: base.$menu-color;
+    box-shadow: base.$standard-shadow;
+    padding: 40px;
+}
+
+.menu-list {
+    list-style-type: none;
+    padding: 20px;
+    line-height: 2em;
+}
+
 
 h1 {
     font-size: 5em;
@@ -56,10 +68,16 @@ h1 {
     padding-top: 200px;
 }
 
+h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
 h3 {
     text-align: center;
     font-size: 1.4em;
 }
+
 
 p {
     font-size: 1.1em;

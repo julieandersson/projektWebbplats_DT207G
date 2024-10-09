@@ -7,7 +7,7 @@ nav {
     background-color: base.$header-color;
     font-family: base.$standard-font;
     font-weight: 200;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.71);
+    box-shadow: base.$standard-shadow;
     font-size: 1.4em;
     position: absolute;
     right: 0;
@@ -67,7 +67,7 @@ nav li:hover {
 
 .menu-btn:hover {
     background-color: base.$header-color-hover;
-    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.421);
+    box-shadow: base.$standard-shadow;
 }
 
 .menu-icon {

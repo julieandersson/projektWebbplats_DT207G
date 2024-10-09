@@ -36,7 +36,7 @@ export async function fetchMenu() {
     }
 }
 
-// Funktion för att visa menyn i HTML
+// Funktion för att visa menyn i HTML grupperad efter kategori
 function displayMenu(menuItems) {
     // Hämtar elementet där menyn ska visas
     const menuContainer = document.getElementById("menu-container");
@@ -48,18 +48,35 @@ function displayMenu(menuItems) {
         return;
     }
 
-    // Skapar en lista för att visa menyn
-    const menuList = document.createElement("ul");
-
-    // Loopa varje menyalternativ och skapa listobjekt
+    // Gruppera menyalternativen efter deras kategori
+    const categories = {};
     menuItems.forEach(item => {
-        const menuItem = document.createElement("li");
-        // Fyll listobjektet med namn, beskrivning och pris
-        menuItem.innerHTML = `<strong>${item.name}</strong> - ${item.description} (Pris: ${item.price} kr)`;
-        // Lägg till i listan
-        menuList.appendChild(menuItem);
+        // Om kategorin inte redan finns, skapa en ny tom lista
+        if (!categories[item.category]) {
+            categories[item.category] = [];
+        }
+        // Lägg till maträtten till rätt kategori
+        categories[item.category].push(item);
     });
 
+    // Skapa HTML-strukturen för att visa kategorier och maträtter
+    for (const category in categories) {
+        // Skapa en rubrik för varje kategori
+        const categoryTitle = document.createElement("h3");
+        categoryTitle.textContent = category;
+        menuContainer.appendChild(categoryTitle);
+
+        // Skapa en lista för varje kategori
+        const categoryList = document.createElement("ul");
+        categoryList.classList.add("menu-list");
+        categories[category].forEach(item => {
+            const menuItem = document.createElement("li");
+            menuItem.innerHTML = `<strong>${item.name}</strong> - ${item.description} (Pris: ${item.price} kr)`;
+            categoryList.appendChild(menuItem);
+        });
+
     // Lägg till komplett lista i menuContainer 
-    menuContainer.appendChild(menuList);
+    menuContainer.appendChild(categoryList);
+
+   }
 }
