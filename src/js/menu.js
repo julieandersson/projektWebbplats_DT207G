@@ -1,5 +1,15 @@
 "use strict";
 
+// Objekt som innehåller bildsökvägar för varje kategori
+const categoryImages = {
+    "Förrätt": new URL('../images/appetizer.jpg', import.meta.url),
+    "Nigiri": new URL('../images/sushi.jpg', import.meta.url),
+    "Varma rätter": new URL('../images/ramen.jpg', import.meta.url),
+    "Dessert": new URL('../images/dessert.jpg', import.meta.url),
+    "Cocktails": new URL('../images/cocktails.jpg', import.meta.url),
+    "Pokebowl": new URL('../images/pokebowl.jpg', import.meta.url)
+};
+
 // Funktion för att hämta menyn från webbtjänsten
 export async function fetchMenu() {
     // Hämtar htmlelement där menyn och laddningsmeddelandet ska visas
@@ -61,6 +71,18 @@ function displayMenu(menuItems) {
 
     // Skapa HTML-strukturen för att visa kategorier och maträtter
     for (const category in categories) {
+        // Skapa en bild för varje kategori om den finns i objektet
+        if (categoryImages[category]) {
+            const categoryImage = document.createElement("img");
+            categoryImage.src = categoryImages[category];
+            categoryImage.alt = `${category} image`;
+            categoryImage.classList.add("category-image"); // Skapar en klass för styling av bilderna i SCSS
+            categoryImage.onerror = () => {
+                console.error(`Bild kunde inte laddas: ${categoryImages[category]}`);
+            };
+            menuContainer.appendChild(categoryImage);
+        }
+
         // Skapa en rubrik för varje kategori
         const categoryTitle = document.createElement("h3");
         categoryTitle.textContent = category;

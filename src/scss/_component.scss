@@ -143,6 +143,18 @@ nav li:hover {
     border-radius: 5px;
 }
 
+/* BILDER FÖR VARJE KATEGORI I MAT-MENYN */
+.category-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: base.$standard-shadow;
+}
+
+
 /* FOOTER */
 
 footer {
