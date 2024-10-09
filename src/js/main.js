@@ -1,6 +1,7 @@
 "use strict";
 
 import { fetchMenu } from './menu.js'; // importerar fetchMenu funktionen i menu.js
+import './booking.js'; // Importera booking.js för att hantera bokningar
 
 // Väntar tills hela strukturen är laddad innan kod körs
 document.addEventListener("DOMContentLoaded", () => {

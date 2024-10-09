@@ -47,6 +47,42 @@
          <img id="background-img" src="images/projekt1.jpg" alt="Ett bord uppdukat med god mat">
     </div>
     <main>
+        <h2>Boka bord</h2>
+        <form id="booking-form">
+            <label for="name">NAMN:</label>
+            <input type="text" id="name" name="name" placeholder="Ange ditt namn" required>
+
+            <label for="email">E-POST:</label>
+            <input type="email" id="email" name="email" placeholder="Ange din e-postadress" required>
+
+            <label for="phoneNumber">TELEFONNUMMER:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Ange ditt telefonnummer" required>
+
+            <label for="numberOfGuests">ANTAL GÄSTER:</label>
+            <input type="number" id="numberOfGuests" name="numberOfGuests" placeholder="Ange antal gäster" required>
+
+            <label for="bookingDate">DATUM OCH TID:</label>
+            <input type="datetime-local" id="bookingDate" name="bookingDate" required>
+
+            <label for="specialRequests">SÄRSKILDA ÖNSKEMÅL:</label>
+            <textarea id="specialRequests" name="specialRequests" placeholder="Eventuella särskilda önskemål"></textarea>
+
+            <!-- Bokningsregler med bocka i-ruta -->
+            <div class="booking-rules">
+                  <p>Vi på Nami Sushi vill informera dig om att vid bokning av bord gäller vår avbokningspolicy:</p>
+                  <p><strong>Avbokning ska ske senast 24 timmar innan bokad tid. Vid avbokning som sker senare debiteras en avgift på 150 kr per person i sällskapet.
+                    Vi tackar för er förståelse och ser fram emot att välkomna er till oss.</strong></p><br>
+           
+                  <label class="checkbox-container">
+                    <input type="checkbox" id="booking-rules" required>
+                  <span class="checkmark"></span> Jag har läst och godkänner bokningsreglerna.
+                </label>
+           </div>
+
+            <button type="submit">BOKA BORD</button>
+        </form>
+
+        <div id="booking-message"></div>
     </main>
 
     <footer class="footer">

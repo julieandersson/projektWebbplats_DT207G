@@ -239,4 +239,120 @@ footer {
     transform: scale(1.1); /* Förstorar knapparna med 10% när man hovrar */
 }
 
+/* BEKRÄFTELSEMEDDELANDEN */
+
+.success-message {
+    color: green;
+    font-weight: bold;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+/* FORMULÄR FÖR BOKA BORD */
+
+#booking-form {
+    background-color: base.$form-color;
+    padding: 30px;
+    border-radius: 10px; 
+    box-shadow: base.$standard-shadow;
+    max-width: 400px; 
+    margin: 20px auto;
+}
+
+#booking-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: base.$standard-white;
+}
+
+#booking-form input,
+#booking-form textarea {
+    width: 95%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid base.$menu-color;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: inset base.$standard-shadow;
+}
+#booking-form input:focus,
+#booking-form textarea:focus {
+    outline: none;
+    border: 1px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#booking-form button {
+    background-color: #007bff;
+    color: base.$standard-white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+}
+
+#booking-form button:hover {
+    background-color: #0056b3;
+}
+
+#booking-message {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* STYLING FÖR BOKNINGSREGLER OCH BOCKA I-RUTA */
+.booking-rules {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: base.$standard-white;
+}
+
+/* Döljer standard-checkboxen */
+.checkbox-container input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Styling för custom-checkbox */
+.checkbox-container .checkmark {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border: 2px solid #007bff; 
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+}
+
+/* Visar markeringen när checkboxen är ikryssad */
+.checkbox-container input[type="checkbox"]:checked + .checkmark {
+    background-color: #007bff;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    top: 2px;
+    left: 6px;
+}
+
+
 
