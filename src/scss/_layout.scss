@@ -20,14 +20,22 @@ body {
 }
 
 header {
-    height: 80px;
+    height: 100px;
     background-color: base.$header-color;
     position: relative;
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+
+.logo img {
+    width: 110px;
+    height: auto; 
+    margin-left: 15;
+    margin-top: 15px;
 }
 
 main {
@@ -40,7 +48,8 @@ main {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 5em;
+    font-family: base.$title-font;
     color: base.$standard-white;
     text-align: center;
     opacity: 80%;
@@ -59,10 +68,14 @@ p {
     margin: 0 auto;
 }
 
+.logo {
+    width: 50%;
+}
+
 /* Media queries för större skärmar */
 @media only screen and (min-width: 990px) {
     header {
-        padding: 0 8em;
+        padding: 0 1.3em;
     }
 
     .menu-btn {
@@ -79,7 +92,6 @@ p {
 
     nav {
         display: block !important;
-        position: static;
         box-shadow: 0 0px 0px;
         height: 80px;
         font-size: 1.3em;
@@ -88,13 +100,15 @@ p {
 
     nav ul {
         height: 100%;
-        padding: 20px;
+        padding: 30px;
     }
 
     nav li {
         display: inline;
-        padding: 1.2em 0;
+        padding: 1.2em 20;
         
     }
+
+
     
 }

@@ -148,15 +148,17 @@ nav li:hover {
 footer {
     background-color: base.$header-color;
     color: base.$standard-white;
-    padding: 20px;
+    padding: 20px 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     text-align: left;
     margin-top: 25px;
 
     .footer-column {
         flex: 1;
-        margin: 0 15px;
+        margin: 0 20px;
+        max-width: 150px;
 
         h4 {
             margin-bottom: 10px;
@@ -182,6 +184,18 @@ footer {
             }
         }
     }
+
+    .footer-logo {
+        flex: 0;
+        text-align: center;
+        margin: 0 40px;
+
+        img {
+            width: 150px;
+            height: auto;
+        }
+    }
+
 }
 
 /* KNAPPAR PÅ STARTSIDAN */
