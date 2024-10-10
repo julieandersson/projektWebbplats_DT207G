@@ -4,22 +4,26 @@ import { fetchMenu } from './menu.js'; // importerar fetchMenu funktionen i menu
 import './booking.js'; // Importerar booking.js för att hantera bokningar
 import './reviews.js'; // Importerar reviews.js för att hantera recensioner
 
-// Väntar tills hela strukturen är laddad innan kod körs
+// Kör funktionen för att hämta menyn när DOM är redo
 document.addEventListener("DOMContentLoaded", () => {
-    fetchMenu(); // Anropar funktionen för att hämta menyn från servern
+    fetchMenu();
+});
 
-    /* KOD FÖR HAMBURGERMENYN */
+/* KOD FÖR HAMBURGERMENYN */
+// Hanterar hamburger-menyns funktionalitet
+document.addEventListener("DOMContentLoaded", () => {
+    const openBtn = document.getElementById("open-menu");
+    const closeBtn = document.getElementById("close-menu");
 
-    // Hämtar knapparna för att öppna och stänga hamburgermenyn
-    let openBtn = document.getElementById("open-menu");
-    let closeBtn = document.getElementById("close-menu");
+    if (openBtn && closeBtn) { // Kontrollera att knapparna existerar
+        openBtn.addEventListener("click", toggleMenu);
+        closeBtn.addEventListener("click", toggleMenu);
+    }
+});
 
-    // Eventlyssnare för att öppna och stänga menyn
-    openBtn.addEventListener("click", toggleMenu);
-    closeBtn.addEventListener("click", toggleMenu);
-
-    /* NAVIGERINGSKNAPPAR PÅ STARTSIDAN */
-
+/* NAVIGERINGSKNAPPAR PÅ STARTSIDAN */
+// Hanterar navigeringsknappar på startsidan
+document.addEventListener("DOMContentLoaded", () => {
     const navigateToMenuBtn = document.getElementById('navigateToMenu');
     const navigateToBookingBtn = document.getElementById('navigateToBooking');
 
@@ -34,8 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = 'booking.html'; // Navigerar till booking.html
         });
     }
+});
 
-    /* KOD FÖR ATT SCROLLAS UPP TILL TOPPEN AV SIDAN VID KLICK AV LOGOTYP I FOOTERN */
+/* KOD FÖR ATT SCROLLAS UPP TILL TOPPEN AV SIDAN VID KLICK AV LOGOTYP I FOOTERN */
+document.addEventListener("DOMContentLoaded", () => {
     const scrollToTopBtn = document.getElementById('scrollToTop');
     if (scrollToTopBtn) {
         scrollToTopBtn.addEventListener('click', function(event) {
@@ -50,15 +56,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Toggla fram navmeny
 function toggleMenu() {
-    let navMenuEl = document.getElementById("nav-menu");
+    const navMenuEl = document.getElementById("nav-menu");
 
-    // Hämtar in css för menyn
-    let style = window.getComputedStyle(navMenuEl);
+    if (navMenuEl) { // Kontrollera att menyn existerar
+        const style = window.getComputedStyle(navMenuEl);
 
-    // Kontrollera om nav är synlig eller ej
-    if (style.display === "none") {
-        navMenuEl.style.display = "block";
-    } else {
-        navMenuEl.style.display = "none";
+        // Kontrollera om nav är synlig eller ej
+        if (style.display === "none") {
+            navMenuEl.style.display = "block";
+        } else {
+            navMenuEl.style.display = "none";
+        }
     }
 }
+

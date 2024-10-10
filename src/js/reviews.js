@@ -1,9 +1,13 @@
 "use strict";
 
-// Funktion för att hämta och visa recensioner
-async function fetchReviews() {
-    const reviewsContainer = document.getElementById("reviews-container");
-    const loadingMessage = document.getElementById("loading-message");
+// Kontrollera om vi befinner oss på en sida med recensioner (t.ex. reviews.html)
+const reviewsContainer = document.getElementById("reviews-container");
+const reviewForm = document.getElementById("review-form");
+
+if (reviewsContainer && reviewForm) {
+    // Funktion för att hämta och visa recensioner
+    async function fetchReviews() {
+        const loadingMessage = document.getElementById("loading-message");
 
     // Visa laddningsmeddelandet innan recensionerna hämtas
     loadingMessage.style.display = "block";
@@ -94,28 +98,23 @@ async function submitReview(event) {
         alert("Något gick fel. Försök igen.");
     }
 }
+    // Funktion för att lägga till den nya recensionen direkt som ett block/en post
+    function addReviewToList(review) {
+        // Skapar ett nytt block för den nya recensionen med klass "review-block"
+        const reviewBlock = document.createElement("div");
+        reviewBlock.classList.add("review-block");
 
-// Funktion för att lägga till den nya recensionen direkt som ett block/en post
-function addReviewToList(review) {
-    const reviewsContainer = document.getElementById("reviews-container");
+        // Lägg till recensionsdata till blocket
+        reviewBlock.innerHTML = `
+            <h4>${review.name}</h4>
+            <p><strong>Betyg: ${review.rating}/5</strong></p>
+            <p>${review.comment}</p>
+        `;
+        reviewsContainer.appendChild(reviewBlock);
+    }
 
-    // Skapa ett nytt block för den nya recensionen med klass "review-block"
-    const reviewBlock = document.createElement("div");
-    reviewBlock.classList.add("review-block");
-
-    // Lägg till recensionsdata till blocket
-    reviewBlock.innerHTML = `
-        <h4>${review.name}</h4>
-        <p><strong>Betyg: ${review.rating}/5</strong></p>
-        <p>${review.comment}</p>
-    `;
-
-    // Lägg till recensionsblocket i reviewsContainer
-    reviewsContainer.appendChild(reviewBlock);
+    // Lägg till eventlyssnare
+    reviewForm.addEventListener("submit", submitReview);
+    // Hämta och visa recensioner när sidan laddas
+    fetchReviews();
 }
-
-// Lägg till eventlyssnare
-document.getElementById("review-form").addEventListener("submit", submitReview);
-
-// Hämta och visa recensioner när sidan laddas
-fetchReviews();
