@@ -305,6 +305,31 @@ footer {
     display: block;
 }
 
+/* FORMULÄR FÖR ATT SKICKA KONTAKTMEDDELANDE */
+
+#contact-form {
+    @extend .form-style;
+}
+
+#contact-form label {
+    @extend .form-label;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    @extend .form-input;
+}
+
+#contact-form textarea {
+    height: 80px; // Specifik justering för textarea
+}
+
+#contact-form button {
+    @extend .form-button;
+    display: block;
+}
+
 
 /* STYLING FÖR BOKNINGSREGLER OCH BOCKA I-RUTA */
 .booking-rules {
