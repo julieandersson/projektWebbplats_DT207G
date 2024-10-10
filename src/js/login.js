@@ -71,3 +71,30 @@ if (loginFormElement) {
     }
   });
 }
+
+
+// Funktion för att visa användarnamnet på inloggningssidan
+function displayLoggedInUser() {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    const welcomeMessage = document.getElementById("welcome-message");
+  
+    if (loggedInUser && welcomeMessage) {
+      welcomeMessage.textContent = `Inloggad som: ${loggedInUser}`;
+    }
+  }
+  
+// Event listener för logga ut-länken
+const logoutLink = document.getElementById("logout-link");
+if (logoutLink) {
+    logoutLink.addEventListener("click", (event) => {
+        event.preventDefault(); // Förhindra att länken omedelbart navigerar bort
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "index.html"; // Omdirigera till startsidan
+    });
+}
+  
+  // Kontrollera om användaren är inloggad och visa användarnamnet
+  window.addEventListener("DOMContentLoaded", () => {
+    displayLoggedInUser();
+});

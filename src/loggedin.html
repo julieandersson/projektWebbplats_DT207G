@@ -35,11 +35,10 @@
                 <span class="menu-text"></span>
             </button>
             <ul>
-                <li><a href="index.html">Hem</a></li>
-                <li><a href="menu.html">Meny</a></li>
-                <li><a href="booking.html">Boka bord</a></li>
-                <li><a href="reviews.html">Recensioner</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="loggedin.html">Bokningar</a></li>
+                <li><a href="messages.html">Nya meddelanden</a></li>
+                <li><a href="adminmenu.html">Hantera meny</a></li>
+                <li><a href="#" id="logout-link">Logga ut</a></li>
             </ul>
         </nav>
     </header>
@@ -49,10 +48,15 @@
     </div>
 
     <main>
-        <h2>Välkommen admin</h2>
+        <h2>Välkommen</h2>
+        <strong id="welcome-message"></strong>
+        <br><br>
         <p>
-            Du är nu inloggad och kan hantera webbplatsens innehåll. 
+            Du är nu inloggad och kan hantera webbplatsens innehåll. Nedan finner du kommande bordsbokningar.
         </p> 
+
+        <h3>Kommande bokningar</h3>
+        <div id="booking-container"></div>
     </main>
 
     
