@@ -1,3 +1,5 @@
+/* SE MENYN PÅ WEBBPLATSEN */
+
 "use strict";
 
 // Objekt som innehåller bildsökvägar för varje kategori

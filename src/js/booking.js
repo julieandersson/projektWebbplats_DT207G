@@ -2,14 +2,16 @@
 
 "use strict";
 
-// Event listener för att hantera formulärinmatning när formuläret skickas
-document.addEventListener("DOMContentLoaded", () => {
-    const bookingForm = document.getElementById("booking-form");
-    const bookingMessage = document.getElementById("booking-message");
+
+const bookingForm = document.getElementById("booking-form");
+const bookingMessage = document.getElementById("booking-message");
 
     if (bookingForm) {
         bookingForm.addEventListener("submit", async (event) => {
             event.preventDefault(); // Förhindrar standardformulärets beteende
+
+            // Töm eventuella tidigare meddelanden
+            bookingMessage.textContent = '';
 
             // Hämta inmatningsvärden från formuläret
             const name = document.getElementById("name").value;
@@ -52,4 +54,3 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-});

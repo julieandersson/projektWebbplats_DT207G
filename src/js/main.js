@@ -3,6 +3,7 @@
 import { fetchMenu } from './menu.js'; // importerar fetchMenu funktionen i menu.js
 import './booking.js'; // Importerar booking.js för att hantera bokningar
 import './reviews.js'; // Importerar reviews.js för att hantera recensioner
+import './contact.js'; // Importerar contact.js för att hantera kontaktmeddelanden
 
 // Kör funktionen för att hämta menyn när DOM är redo
 document.addEventListener("DOMContentLoaded", () => {

@@ -1,3 +1,5 @@
+/* SKRIV EN NY RECENSION OCH LÄS BEFINTLIGA RECENSIONER PÅ WEBBPLATSEN */
+
 "use strict";
 
 // Kontrollera om vi befinner oss på en sida med recensioner (t.ex. reviews.html)

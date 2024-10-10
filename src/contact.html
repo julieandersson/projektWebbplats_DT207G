@@ -47,6 +47,27 @@
          <img id="background-img" src="images/projekt1.jpg" alt="Ett bord uppdukat med god mat">
     </div>
     <main>
+        <h2>Kontakta oss</h2>
+        <p>Har du frågor, funderingar eller förslag? Vi vill gärna höra från dig! Fyll i formuläret nedan, 
+            så återkommer vi till dig via e-post så snart som möjligt. Vi strävar efter att ge dig svar inom kort för att hjälpa dig på bästa sätt.
+        </p>
+
+        <form id="contact-form">
+            <label for="name">NAMN:</label>
+            <input type="text" id="name" name="name" placeholder="Ange ditt namn">
+    
+            <label for="email">E-POST:</label>
+            <input type="email" id="email" name="email" placeholder="Ange din e-post">
+    
+            <label for="message">MEDDELANDE:</label>
+            <textarea id="message" name="message" placeholder="Skriv ditt meddelande här"></textarea>
+    
+            <button type="submit">SKICKA MEDDELANDE</button>
+        </form>
+    
+        <div id="error-message" class="error-message"></div>
+        <div id="success-message" class="success-message"></div>
+
     </main>
 
     <footer class="footer">
