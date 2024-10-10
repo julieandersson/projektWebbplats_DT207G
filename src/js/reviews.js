@@ -72,6 +72,13 @@ async function submitReview(event) {
     const comment = document.getElementById("comment").value;
     const rating = document.getElementById("rating").value;
 
+    const errorMessageDiv = document.getElementById("error-message");
+    const successMessageDiv = document.getElementById("success-message");
+
+    // Töm eventuella tidigare meddelanden
+    errorMessageDiv.textContent = '';
+    successMessageDiv.textContent = '';
+
     try {
         // Skicka recension till webbtjänst med ett POST-anrop
         const response = await fetch("https://projektwebservice-dt207g.onrender.com/api/reviews", {
@@ -82,16 +89,28 @@ async function submitReview(event) {
             body: JSON.stringify({ name, comment, rating }) // Skickar datan i JSON-format
         });
 
+        // Om svaret inte är OK, kontrollera om det är ett valideringsfel
         if (!response.ok) {
-            throw new Error("Kunde inte skicka recensionen, vänligen försök igen.");
-        }
+            const errorData = await response.json();
+            if (response.status === 400 && errorData.error) {
+                // Visa de specifika valideringsfelen från servern
+                errorMessageDiv.textContent = `${errorData.error}`;
+            } else {
+                // Om det inte är ett valideringsfel, visa ett generellt felmeddelande
+                throw new Error("Kunde inte skicka recensionen, vänligen försök igen.");
+            }
+        } else {
+            // Lägg till den nya recensionen direkt utan att ladda om sidan
+            const newReview = await response.json();
+            addReviewToList(newReview.review);
 
-        // Lägg till den nya recensionen direkt utan att ladda om sidan
-        const newReview = await response.json();
-        addReviewToList(newReview.review);
+            // Visa ett framgångsmeddelande
+            successMessageDiv.textContent = "Tack för din recension! Din åsikt betyder mycket för oss.";
 
         // Töm formuläret efter att recensionen har skickats
         document.getElementById("review-form").reset();
+        }
+
     } catch (error) {
         // Vid fel, logga felmeddelade och visa ett felmeddelande till användaren
         console.error("Fel vid skickning av recension:", error);
