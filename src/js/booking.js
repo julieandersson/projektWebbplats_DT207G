@@ -78,3 +78,69 @@ if (bookingForm) {
     });
 }
 
+// Funktion för att hämta och visa alla bokningar (endast i inloggad läge för admin)
+async function fetchAndDisplayBookings() {
+    // element för att visa bokningar och laddningsmeddelandet 
+    const bookingContainer = document.getElementById("booking-container");
+    const loadingMessage = document.getElementById("loading-message");
+
+    // Visa laddningsmeddelandet innan bokningarna laddas
+    if (loadingMessage) {
+        loadingMessage.style.display = "block"; // Se till att laddningsmeddelandet visas
+    }
+
+    try {
+        // Hämta användarens token från localStorage (behövs för att verifiera att användaren är inloggad)
+        const token = localStorage.getItem("authToken");
+
+        // GET-förfrågan till webbtjänst för att hämta alla bokningar
+        const response = await fetch("https://projektwebservice-dt207g.onrender.com/api/bookings", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}` // Skicka med token i förfrågan
+            },
+        });
+
+        // Gör om svaret till JSON-format
+        const bookings = await response.json();
+
+        // Kolla om svaret är ok och om det finns några bokningar
+        if (response.ok && bookings.length > 0) {
+            // Skapa HTML-kod för att visa bokningarna i bookingContainer
+            bookingContainer.innerHTML = bookings
+                .map(
+                    (booking) => `
+                    <div class="booking-item">
+                        <p><strong>Namn:</strong> ${booking.name}</p>
+                        <p><strong>Email:</strong> ${booking.email}</p>
+                        <p><strong>Telefon:</strong> ${booking.phoneNumber}</p>
+                        <p><strong>Antal gäster:</strong> ${booking.numberOfGuests}</p>
+                        <p><strong>Bokningsdatum:</strong> ${new Date(booking.bookingDate).toLocaleString()}</p>
+                        <p><strong>Önskemål:</strong> ${booking.specialRequests || "Inga specifika önskemål"}</p>
+                    </div>
+                    <hr>
+                `
+                )
+                .join(""); // gör en enda stor sträng av alla bokningar
+        } else {
+            // Om inga bokningar hittades, visa meddelande
+            bookingContainer.innerHTML = "<p>Inga bokningar hittades.</p>";
+        }
+    } catch (error) {
+        // Om fel vid hämtning, skriv ut ett meddelande
+        console.error("Ett fel inträffade vid hämtning av bokningar:", error);
+        bookingContainer.innerHTML = "<p>Ett serverfel uppstod, vänligen försök igen senare.</p>";
+    } finally {
+        // Dölj laddningsmeddelandet när bokningarna har laddats eller om ett fel uppstod
+        if (loadingMessage) {
+            loadingMessage.style.display = "none"; // Dölj laddningsmeddelandet
+        }
+    }
+}
+
+// Anropa funktionen när sidan laddas för att hämta och visa bokningar
+window.addEventListener("DOMContentLoaded", fetchAndDisplayBookings);
+
+
+
