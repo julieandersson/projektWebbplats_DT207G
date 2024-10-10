@@ -47,9 +47,31 @@
      <div class="background-picture">
          <img id="background-img" src="images/projekt1.jpg" alt="Ett bord uppdukat med god mat">
     </div>
+
     <main>
+    <h2>Logga in som admin</h2>
+            <!-- Formulär för inloggning -->
+            <form id="login-form">
+                <label for="username">Användarnamn:</label>
+                <input type="text" id="username" required>
+                
+                <label for="password">Lösenord:</label>
+                <input type="password" id="password" required>
+                
+                <button type="submit">Logga in</button>
+            </form>
+
+        <!-- Laddningsindikator, visas när inloggningen pågår -->
+        <div id="loading-indicator" style="display: none;">
+            <p><i class="fa-solid fa-arrows-rotate"></i> Loggar in, vänligen vänta...</p>
+        </div>
+        <!-- Felmeddelande, visas om något går fel -->
+        <div id="loginErrorMessage" style="display: none; color: red;"></div>
+
+
     </main>
 
+    
     <footer class="footer">
         <div class="footer-column">
             <h4>Kontakt:</h4>
@@ -68,12 +90,12 @@
         <div class="footer-column">
             <h4>Snabblänkar:</h4>
             <ul>
-                <li><a href="#"><i class="fa-solid fa-house"></i> Hem</a></li>
-                <li><a href="#"><i class="fa-solid fa-utensils"></i> Meny</a></li>
-                <li><a href="#"><i class="fa-regular fa-calendar"></i> Boka</a></li>
-                <li><a href="#"><i class="fa-regular fa-comments"></i> Kontakt</a></li>
-                <li><a href="#"><i class="fa-regular fa-face-smile"></i> Recensioner</a></li>
-                <li><a href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i> Admin</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Hem</a></li>
+                <li><a href="menu.html"><i class="fa-solid fa-utensils"></i> Meny</a></li>
+                <li><a href="booking.html"><i class="fa-regular fa-calendar"></i> Boka</a></li>
+                <li><a href="contact.html"><i class="fa-regular fa-comments"></i> Kontakt</a></li>
+                <li><a href="reviews.html"><i class="fa-regular fa-face-smile"></i> Recensioner</a></li>
+                <li><a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket"></i> Admin</a></li>
             </ul>
         </div>
     </footer>

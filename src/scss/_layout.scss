@@ -65,7 +65,7 @@ main {
     text-align: center;
 }
 
-#loading-message i {
+#loading-message i, #loading-indicator i {
     font-size: 1.1em;
     animation-name: loading;
     animation-timing-function: ease;
