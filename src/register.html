@@ -48,35 +48,30 @@
     </div>
 
     <main>
-        <h2>Hantera meny</h2>
+        <h2>Skapa konto</h2>
         <strong id="welcome-message"></strong><br><br>
         <p>
-         Här kan du lägga till, ändra eller ta bort rätter på menyn.
-        </p> <br>
-        <!-- Laddningsmeddelande som visas medan menyn laddas -->
-        <div id="loading-message"><i class="fa-solid fa-arrows-rotate"></i> Laddar menyn, vänligen vänta...</div>
+            Vill du skapa ett separat konto för dig själv eller ditt team baserat på ansvarsområde? 
+            Här kan du skapa ett konto för att hantera specifika delar av restaurangens verksamhet, 
+            såsom menyn, bokningar eller kundmeddelanden. Genom att ha separata konton kan varje team 
+            fokusera på sina egna uppgifter utan att behöva dela inloggningsuppgifter.
+        </p>
+        <p>
+            <strong>Observera:</strong> När ett användarnamn och lösenord har skapats kan dessa inte ändras. 
+            Dela inte ditt inloggningskonto med andra utanför ditt ansvarsområde för att säkerställa 
+            säkerheten och integriteten i vår hantering av webbplatsen.
+        </p>
 
-        <!-- Formulär för att lägga till en ny maträtt -->
-    <form id="add-dish-form">
-        <h3>Lägg till ny maträtt</h3>
-        <input type="text" id="dish-name" placeholder="Namn på maträtten">
-        <input type="text" id="dish-description" placeholder="Beskrivning">
-        <input type="number" id="dish-price" placeholder="Pris">
-        <select id="dish-category">
-            <option value="">Välj kategori</option>
-            <option value="Förrätt">Förrätt</option>
-            <option value="Nigiri">Nigiri</option>
-            <option value="Maki">Maki</option>
-            <option value="Varma rätter">Varma rätter</option>
-            <option value="Pokebowl">Pokebowl</option>
-            <option value="Dessert">Dessert</option>
-            <option value="Cocktails">Cocktails</option>
-        </select>
-        <button type="submit">Lägg till maträtt</button>
-    </form>
-
-        <!-- Menycontainer där menyn skrivs ut efter att den har hämtats-->
-        <div id="menu-container"></div>
+        <!-- Formulär för skapa konto -->
+        <form id="register-form">
+             <label for="username">Användarnamn:</label>
+             <input type="text" id="username" required>
+                
+             <label for="password">Lösenord:</label>
+             <input type="password" id="password" required>
+                
+             <button type="submit">Skapa konto</button>
+        </form>
     </main>
 
     
@@ -101,7 +96,6 @@
                 <li><a href="loggedin.html"><i class="fa-regular fa-calendar"></i> Bokningar</a></li>
                 <li><a href="messages.html"><i class="fa-regular fa-comments"></i> Nya meddelanden</a></li>
                 <li><a href="adminmenu.html"><i class="fa-solid fa-utensils"></i> Hantera meny</a></li>
-                <li><a href="register.html"><i class="fa-solid fa-user-plus"></i> Skapa konto</a></li>
             </ul>
         </div>
     </footer>
