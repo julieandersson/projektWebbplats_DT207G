@@ -10,10 +10,18 @@ import './booking.js'; // Importerar booking.js för att hantera bokningar
 import './reviews.js'; // Importerar reviews.js för att hantera recensioner
 import './contact.js'; // Importerar contact.js för att hantera kontaktmeddelanden
 import './login.js'; // Importerar login.js för att hantera inloggning
+import './adminmenu.js'; // Importerar adminmenu.js för att hantera menyn i inloggad adminläge
 
 import { sendResponse } from './contact.js'; // Importerar putfunktionen från contact.js
 // Exponera funktionen globalt
 window.sendResponse = sendResponse;
+
+import { updateDish, saveUpdatedDish, cancelUpdate, deleteDish } from './adminmenu.js'; // Importerar funktionerna från adminmenu.js
+// Exponera funktionerna globalt så att de kan anropas från HTML
+window.updateDish = updateDish;
+window.deleteDish = deleteDish;
+window.saveUpdatedDish = saveUpdatedDish;
+window.cancelUpdate = cancelUpdate;
 
 /* KOD FÖR HAMBURGERMENYN */
 // Hanterar hamburger-menyns funktionalitet

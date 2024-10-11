@@ -24,6 +24,12 @@ export async function fetchMenu() {
         return;
     }
 
+    // Rensar menycontainern varje gång innan den uppdateras för att säkerställa att menyn alltid byggs och laddas på nytt
+    menuContainer.innerHTML = '';
+
+    // Visa laddningsmeddelandet under tiden menyn hämtas
+    loadingMessage.style.display = 'block';
+
     try {
         // Anropar webbtjänsten för att hämta menyn med GET-anrop
         const response = await fetch("https://projektwebservice-dt207g.onrender.com/api/cuisine");
@@ -60,6 +66,9 @@ function displayMenu(menuItems) {
         return;
     }
 
+    // Kontrollerar om admin är inloggad genom att se om en token finns i localStorage
+    const isAdminLoggedIn = localStorage.getItem("authToken") !== null;
+
     // Gruppera menyalternativen efter deras kategori
     const categories = {};
     menuItems.forEach(item => {
@@ -71,8 +80,13 @@ function displayMenu(menuItems) {
         categories[item.category].push(item);
     });
 
+    // Definierar rätt ordning på kategorierna hur menyn ska visas
+    const categoryOrder = ["Förrätt", "Nigiri", "Maki", "Pokebowl", "Varma rätter", "Dessert", "Cocktails"];
+
     // Skapa HTML-strukturen för att visa kategorier och maträtter
-    for (const category in categories) {
+    categoryOrder.forEach(category => {
+        // Kontrollera om kategorin finns i kategorier-objektet
+        if (categories[category]) {
         // Skapa en bild för varje kategori om den finns i objektet
         if (categoryImages[category]) {
             const categoryImage = document.createElement("img");
@@ -93,9 +107,21 @@ function displayMenu(menuItems) {
         // Skapa en lista för varje kategori
         const categoryList = document.createElement("ul");
         categoryList.classList.add("menu-list");
+
         categories[category].forEach(item => {
-            const menuItem = document.createElement("li");
-            menuItem.innerHTML = `<strong>${item.name}</strong> - ${item.description} (Pris: ${item.price} kr)`;
+           const menuItem = document.createElement("li");
+           menuItem.id = `menu-item-${item._id}`; // Lägg till ett ID för varje maträtt
+
+           menuItem.innerHTML = `
+               <strong>${item.name}</strong> - ${item.description} (Pris: ${item.price} kr)`;
+
+           // Lägg endast till uppdaterings- och raderingsknappar om admin är inloggad
+           if (isAdminLoggedIn) {
+               menuItem.innerHTML += `
+                    <button onclick="updateDish('${item._id}', '${item.name}', '${item.description}', '${item.price}', '${item.category}')">Uppdatera</button>
+                    <button onclick="deleteDish('${item._id}')">Ta bort</button>`;
+            }
+
             categoryList.appendChild(menuItem);
         });
 
@@ -103,4 +129,8 @@ function displayMenu(menuItems) {
     menuContainer.appendChild(categoryList);
 
    }
+
+  });
 }
+
+
