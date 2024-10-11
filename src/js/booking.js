@@ -116,15 +116,14 @@ async function fetchAndDisplayBookings() {
             bookingContainer.innerHTML = bookings
                 .map(
                     (booking) => `
-                    <div class="booking-item">
-                        <p><strong>Namn:</strong> ${booking.name}</p>
-                        <p><strong>Email:</strong> ${booking.email}</p>
-                        <p><strong>Telefon:</strong> ${booking.phoneNumber}</p>
-                        <p><strong>Antal gäster:</strong> ${booking.numberOfGuests}</p>
-                        <p><strong>Bokningsdatum:</strong> ${new Date(booking.bookingDate).toLocaleString()}</p>
-                        <p><strong>Önskemål:</strong> ${booking.specialRequests || "Inga specifika önskemål"}</p>
-                    </div>
-                    <hr>
+                    <div class="booking-block">
+                    <h4>${booking.name}</h4>
+                    <p><strong>Email:</strong> ${booking.email}</p>
+                    <p><strong>Telefon:</strong> ${booking.phoneNumber}</p>
+                    <p><strong>Antal gäster:</strong> ${booking.numberOfGuests}</p>
+                    <p><strong>Bokningsdatum:</strong> ${new Date(booking.bookingDate).toLocaleString()}</p>
+                    <p><strong>Önskemål:</strong> ${booking.specialRequests || "Inga specifika önskemål"}</p>
+                 </div>
                 `
                 )
                 .join(""); // gör en enda stor sträng av alla bokningar

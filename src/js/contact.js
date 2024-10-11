@@ -107,8 +107,8 @@ async function fetchAndDisplayMessages() {
                         <p><strong>Meddelande:</strong> ${message.message}</p>
                         <p><strong>Svar:</strong> ${message.response || "Inget svar ännu"}</p>
                         <p><strong>Skickat:</strong> ${new Date(message.dateSent).toLocaleString()}</p>
-                        <textarea id="response-${message._id}" placeholder="Skriv ditt svar här. Användaren kommer få svaret skickat till sig på den avgivna email-adressen."></textarea>
-                        <button onclick="sendResponse('${message._id}')">Skicka svar</button>
+                        <textarea id="response-${message._id}" class="response-textarea" placeholder="Skriv ditt svar här. Svaret kommer att skickas till användarens angivna e-postadress."></textarea>
+                        <button class="send-response-btn" onclick="sendResponse('${message._id}')">Skicka svar</button>
                     </div>
                     <hr>
                 `
