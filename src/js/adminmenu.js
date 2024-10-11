@@ -83,10 +83,17 @@ export function updateDish(dishId, name, description, price, category) {
 // Funktion för att spara den uppdaterade maträtten (PUT)
 export async function saveUpdatedDish(dishId) {
     // Hämtar de nya värdena från formuläret i ändringarna som gjorts
-    const newName = document.getElementById(`update-name-${dishId}`).value;
-    const newDescription = document.getElementById(`update-description-${dishId}`).value;
-    const newPrice = document.getElementById(`update-price-${dishId}`).value;
-    const newCategory = document.getElementById(`update-category-${dishId}`).value;
+    const newName = document.getElementById(`update-name-${dishId}`).value.trim();
+    const newDescription = document.getElementById(`update-description-${dishId}`).value.trim();
+    const newPrice = document.getElementById(`update-price-${dishId}`).value.trim();
+    const newCategory = document.getElementById(`update-category-${dishId}`).value.trim();
+
+
+    // Kontrollera att de obligatoriska fälten är ifyllda
+    if (!newName || !newPrice || !newCategory) {
+        alert("Vänligen fyll i alla obligatoriska fält: namn, pris och kategori.");
+        return; // Avbryt uppdateringen om fälten inte är ifyllda
+    }
 
     try {
         const token = localStorage.getItem("authToken"); // Hämtar token
