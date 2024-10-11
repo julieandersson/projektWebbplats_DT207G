@@ -11,6 +11,7 @@ import './reviews.js'; // Importerar reviews.js för att hantera recensioner
 import './contact.js'; // Importerar contact.js för att hantera kontaktmeddelanden
 import './login.js'; // Importerar login.js för att hantera inloggning
 import './adminmenu.js'; // Importerar adminmenu.js för att hantera menyn i inloggad adminläge
+import './register.js'; // Importerar register.js för att hantera registrering av nytt adminkonto
 
 import { sendResponse } from './contact.js'; // Importerar putfunktionen från contact.js
 // Exponera funktionen globalt
