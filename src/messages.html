@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nami sushi</title>
+    <!-- Länkar in scss-fil -->
+    <link rel="stylesheet" href="scss/main.scss">
+    <!-- Länk till fontawesome för ikoner -->
+    <script src="https://kit.fontawesome.com/41ba6d6515.js" crossorigin="anonymous"></script>
+    <!-- Länkar in js-fil -->
+    <script src="js/main.js" type="module"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Logotyp"></a></div>
+        <!-- Meny knapp för att öppna mobilmenyn-->
+        <button class="menu-btn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text"></span>
+        </button>
+        <!-- navigering -->
+        <nav id="nav-menu">
+            <!-- Knapp som visas om mobilmenyn är utfälld -->
+            <button class="menu-btn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text"></span>
+            </button>
+            <ul>
+                <li><a href="loggedin.html">Bokningar</a></li>
+                <li><a href="messages.html">Nya meddelanden</a></li>
+                <li><a href="adminmenu.html">Hantera meny</a></li>
+                <li><a href="#" id="logout-link">Logga ut</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Bakgrundsbild -->
+     <div class="background-picture">
+         <img id="background-img" src="images/projekt1.jpg" alt="Ett bord uppdukat med god mat">
+    </div>
+
+    <main>
+        <h2>Meddelanden</h2>
+        <strong id="welcome-message"></strong><br><br>
+        <!-- Laddningsmeddelande som visas medan meddelanden laddas -->
+        <div id="loading-message"><i class="fa-solid fa-arrows-rotate"></i> Laddar meddelanden...</div>
+        <div id="messages-container"></div>
+    </main>
+
+    
+    <footer class="footer">
+        <div class="footer-column">
+            <h4>Kontakt:</h4>
+            <p><i class="fa-solid fa-phone"></i> Telenummer</p>
+            <p><i class="fa-regular fa-envelope"></i> Email</p>
+            <br>
+            <h4>Öppettider:</h4>
+            <p>Mån-Fre: 11-23</p>
+            <p>Lör-Sön: 12-02</p>
+        </div>
+            <!-- Logotypen i mitten -->
+            <div class="footer-logo">
+                <a href="#" id="scrollToTop"><img src="images/logo.png" alt="Logotyp"></a>
+           </div>
+       
+        <div class="footer-column">
+            <h4>Snabblänkar:</h4>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Hem</a></li>
+                <li><a href="menu.html"><i class="fa-solid fa-utensils"></i> Meny</a></li>
+                <li><a href="booking.html"><i class="fa-regular fa-calendar"></i> Boka</a></li>
+                <li><a href="contact.html"><i class="fa-regular fa-comments"></i> Kontakt</a></li>
+                <li><a href="reviews.html"><i class="fa-regular fa-face-smile"></i> Recensioner</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>

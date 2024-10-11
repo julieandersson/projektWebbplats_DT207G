@@ -84,6 +84,11 @@ async function fetchAndDisplayBookings() {
     const bookingContainer = document.getElementById("booking-container");
     const loadingMessage = document.getElementById("loading-message");
 
+    // Kontrollera om bookingContainer finns på sidan innan vi kör koden
+    if (!bookingContainer) {
+        return; // Avbryt om vi inte är på sidan där bokningar ska visas
+    }
+
     // Visa laddningsmeddelandet innan bokningarna laddas
     if (loadingMessage) {
         loadingMessage.style.display = "block"; // Se till att laddningsmeddelandet visas

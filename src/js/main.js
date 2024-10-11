@@ -1,15 +1,19 @@
 "use strict";
 
 import { fetchMenu } from './menu.js'; // importerar fetchMenu funktionen i menu.js
+// Kör funktionen för att hämta menyn när DOM är redo
+document.addEventListener("DOMContentLoaded", () => {
+    fetchMenu();
+});
+
 import './booking.js'; // Importerar booking.js för att hantera bokningar
 import './reviews.js'; // Importerar reviews.js för att hantera recensioner
 import './contact.js'; // Importerar contact.js för att hantera kontaktmeddelanden
 import './login.js'; // Importerar login.js för att hantera inloggning
 
-// Kör funktionen för att hämta menyn när DOM är redo
-document.addEventListener("DOMContentLoaded", () => {
-    fetchMenu();
-});
+import { sendResponse } from './contact.js'; // Importerar putfunktionen från contact.js
+// Exponera funktionen globalt
+window.sendResponse = sendResponse;
 
 /* KOD FÖR HAMBURGERMENYN */
 // Hanterar hamburger-menyns funktionalitet
