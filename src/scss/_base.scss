@@ -68,3 +68,20 @@ $title-font: "Bangers", system-ui;
       }
     }
   }
+
+/* Mixin för knappstil för uppdatera/tabort-knappar */
+@mixin button-base {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Färg för uppdatera/tabort-knappar */
+
+$del-btn-color: #d98983;
+$del-btn-hover-color: #e53935;
+$upd-btn-color: #7cbd7e;
+$upd-btn-hover-color: #45a049;

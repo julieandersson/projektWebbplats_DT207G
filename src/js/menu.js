@@ -118,8 +118,10 @@ function displayMenu(menuItems) {
            // Lägg endast till uppdaterings- och raderingsknappar om admin är inloggad
            if (isAdminLoggedIn) {
                menuItem.innerHTML += `
-                    <button onclick="updateDish('${item._id}', '${item.name}', '${item.description}', '${item.price}', '${item.category}')">Uppdatera</button>
-                    <button onclick="deleteDish('${item._id}')">Ta bort</button>`;
+               <div class="admin-actions">
+                    <button class="admin-btn update-btn" onclick="updateDish('${item._id}', '${item.name}', '${item.description}', '${item.price}', '${item.category}')">Uppdatera</button>
+                    <button class="admin-btn delete-btn" onclick="deleteDish('${item._id}')">Ta bort</button>
+                </div>`;
             }
 
             categoryList.appendChild(menuItem);

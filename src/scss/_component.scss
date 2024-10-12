@@ -437,6 +437,36 @@ textarea.response-textarea {
     @include base.form-base;
 }
 
+/* GEMENSAM STYLING FÖR UPPDATERA OCH TA BORT-KNAPP I MENYN */
+.admin-actions {
+    margin-bottom: 15px;
+    display: block;
+    gap: 10px;
+}
+
+.update-btn,
+.delete-btn {
+    @include base.button-base;
+}
+
+.update-btn {
+    background-color: base.$upd-btn-color;
+    color: base.$standard-white;
+
+    &:hover {
+        background-color: base.$upd-btn-hover-color;
+    }
+}
+
+.delete-btn {
+    background-color: base.$del-btn-color;
+    color: base.$standard-white;
+
+    &:hover {
+        background-color: base.$del-btn-hover-color;
+    }
+}
+
 
 
 
