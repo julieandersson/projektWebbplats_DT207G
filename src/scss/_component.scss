@@ -422,6 +422,22 @@ textarea.response-textarea {
     @extend .form-button;
 }
 
+/* Login-formulär */
+#login-form {
+    @include base.form-base;
+  }
+  
+/* Skapa konto-formulär */
+#register-form {
+    @include base.form-base;
+}
+
+/* Lägg till ny maträtt-formulär */
+#add-dish-form {
+    @include base.form-base;
+}
+
+
 
 
 

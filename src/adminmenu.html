@@ -54,15 +54,13 @@
         <p>
          Här kan du lägga till, ändra eller ta bort rätter på menyn.
         </p>
-    </section><br>
-        <!-- Laddningsmeddelande som visas medan menyn laddas -->
-        <div id="loading-message"><i class="fa-solid fa-arrows-rotate"></i> Laddar menyn, vänligen vänta...</div>
+    </section>
 
         <!-- Formulär för att lägga till en ny maträtt -->
     <form id="add-dish-form">
         <h3>Lägg till ny maträtt</h3>
         <input type="text" id="dish-name" placeholder="Namn på maträtten">
-        <input type="text" id="dish-description" placeholder="Beskrivning">
+        <textarea id="dish-description" placeholder="Beskrivning">
         <input type="number" id="dish-price" placeholder="Pris">
         <select id="dish-category">
             <option value="">Välj kategori</option>
@@ -77,6 +75,8 @@
         <button type="submit">Lägg till maträtt</button>
     </form>
 
+        <!-- Laddningsmeddelande som visas medan menyn laddas -->
+        <div id="loading-message"><i class="fa-solid fa-arrows-rotate"></i> Laddar menyn, vänligen vänta...</div>
         <!-- Menycontainer där menyn skrivs ut efter att den har hämtats-->
         <div id="menu-container"></div>
     </main>

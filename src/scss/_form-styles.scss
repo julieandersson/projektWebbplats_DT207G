@@ -1,5 +1,7 @@
 /* Standard-styling för formulären på webbplatsen */
 
+@use "base";
+
 .form-style {
     background-color: base.$form-color;
     padding: 30px;
