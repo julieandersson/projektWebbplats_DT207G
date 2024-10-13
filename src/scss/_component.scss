@@ -361,6 +361,54 @@ textarea.response-textarea {
     }
 }
 
+/* Lista med restaurangernas olika adresser och kontaktinfo */
+
+.restaurant-section {
+    text-align: center;
+
+    h4 {
+        text-align: center; 
+        margin-bottom: 5px;
+        font-size: 1.2em;
+    }
+
+    .restaurant-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px;
+        text-align: center;
+
+        li {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+
+            strong {
+                color: #000;
+            }
+
+            a {
+                color: #000;
+                text-decoration: none;
+                display: block;
+                transition: transform 0.3s ease, color 0.3s ease;
+
+                /* Förstorar och ändrar färg vid hover */
+                &:hover {
+                    transform: scale(1.1);
+                    color: rgb(14, 46, 62);
+                }
+            }
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid base.$border-color;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+
+
 
 
 
