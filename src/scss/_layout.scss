@@ -4,7 +4,7 @@
 @use "component";
 @use "keyframes";
 
-/* Generell styling för body och header */
+/* Generell styling */
 
 * {
     padding: 0;
@@ -36,13 +36,6 @@ header {
 }
 
 
-.logo img {
-    width: 110px;
-    height: auto; 
-    margin-left: 15;
-    margin-top: 15px;
-}
-
 main {
     background-color: base.$main-color;
     width: 75%;
@@ -65,12 +58,12 @@ main {
 }
 
 #loading-message, #loading-indicator {
-    font-size: 1.3em;
+    font-size: 1.1em;
     text-align: center;
 }
 
 #loading-message i, #loading-indicator i {
-    font-size: 1.1em;
+    font-size: 0.9em;
     animation-name: loading;
     animation-timing-function: ease;
     animation-duration: 3s;
@@ -113,43 +106,62 @@ section p {
     width: 50%;
 }
 
-/* Media queries för större skärmar */
-@media only screen and (min-width: 990px) {
-    header {
-        padding: 0 1.3em;
+/* FOOTER */
+
+footer {
+    background-color: base.$header-color;
+    color: base.$standard-white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    margin-top: 25px;
+
+    .footer-column {
+        flex: 1;
+        margin: 0 20px;
+        max-width: 150px;
+
+        h4 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        p {
+            margin: 4px 0;
+
+        }
+
+        li {
+            margin: 15px 0;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: base.$standard-white;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
-    .menu-btn {
-        display: none;
+    .footer-logo {
+        flex: 0;
+        text-align: center;
+        margin: 0 40px;
+
+        img {
+            width: 150px;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.1); /* Förstorar logotypen med 10% när man hovrar */
+        }
     }
 
-    #open-menu {
-        display: none !important;
-    }
-
-    header {
-        position: static;
-    }
-
-    nav {
-        display: block !important;
-        box-shadow: 0 0px 0px;
-        height: 80px;
-        font-size: 1.3em;
-        width: auto;
-    }
-
-    nav ul {
-        height: 100%;
-        padding: 30px;
-    }
-
-    nav li {
-        display: inline;
-        padding: 1.2em 20;
-        
-    }
-
-
-    
 }
