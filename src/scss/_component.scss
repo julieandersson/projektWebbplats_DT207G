@@ -152,7 +152,7 @@ nav li:hover {
 #welcome-message {
     background-color: rgb(255, 181, 117);
     padding: 5px;
-    border: 1px solid #8c8c8c;
+    border: 1px solid base.$border-color;
     border-radius: 5px;
 }
 
@@ -254,7 +254,7 @@ nav li:hover {
     width: 18px;
     height: 18px;
     background-color: #fff;
-    border: 2px solid #007bff; 
+    border: 2px solid base.$form-btn-color; 
     border-radius: 4px;
     margin-right: 10px;
     position: relative;
@@ -262,7 +262,7 @@ nav li:hover {
 
 /* Visar markeringen när checkboxen är ikryssad */
 .checkbox-container input[type="checkbox"]:checked + .checkmark {
-    background-color: #007bff;
+    background-color: base.$form-btn-color;
 }
 
 .checkbox-container input[type="checkbox"]:checked + .checkmark:after {

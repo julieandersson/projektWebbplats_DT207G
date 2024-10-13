@@ -58,6 +58,7 @@ export function updateDish(dishId, name, description, price, category) {
         const menuItemElement = document.querySelector(`#menu-item-${dishId}`);
         const updateForm = document.createElement('form');
         updateForm.id = `update-form-${dishId}`;
+        updateForm.className = 'update-form'; 
         updateForm.innerHTML = `
             <input type="text" id="update-name-${dishId}" value="${name}" placeholder="Namn">
             <input type="text" id="update-description-${dishId}" value="${description}" placeholder="Beskrivning">

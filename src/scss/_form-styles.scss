@@ -1,4 +1,4 @@
-/* Standard-styling för formulären på webbplatsen */
+/* Styling för boka bord, skriva recension och kontakt-formulären på webbplatsen */
 
 @use "base";
 
@@ -18,10 +18,10 @@
 }
 
 .form-input {
-    width: 95%; 
+    width: 98%; 
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid base.$menu-color;
+    border: 1px solid base.$border-color;
     border-radius: 5px;
     font-size: 1em;
     box-shadow: inset base.$standard-shadow;
@@ -29,12 +29,12 @@
 
 .form-input:focus {
     outline: none;
-    border: 1px solid #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border: 1px solid base.$form-btn-color;
+    box-shadow: 0 0 5px base.$standard-shadow;
 }
 
 .form-button {
-    background-color: #007bff;
+    background-color: base.$form-btn-color;
     color: base.$standard-white;
     border: none;
     border-radius: 5px;
@@ -45,5 +45,71 @@
 }
 
 .form-button:hover {
-    background-color: #0056b3;
+    background-color: base.$form-btn-hover-color;
 }
+
+
+/* Styling för uppdateringsformuläret i admin-läge vid menyn */
+/* Gör formuläret litet för att det inte ska ta upp för mycket plats i menyn */
+
+.update-form {
+    background-color: base.$standard-white;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid base.$border-color;
+    max-width: 300px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Individuella input-fält */
+.update-form input[type="text"],
+.update-form input[type="number"],
+.update-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px; 
+    border-radius: 4px;
+    border: 1px solid base.$border-color; 
+    box-shadow: none;
+}
+
+/* Fokus-styling */
+.update-form input:focus,
+.update-form select:focus {
+    outline: none;
+    border-color: base.$border-color;
+    box-shadow: none;
+}
+
+/* Spara och avbryt-knappar */
+.update-form button {
+    padding: 8px;
+    font-size: 0.9em; 
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: none;
+    color: base.$standard-white;
+}
+
+/* färg för spara och avbryt knappar */
+.update-form button[type="button"]:first-of-type {
+    background-color: base.$upd-btn-color;
+}
+
+.update-form button[type="button"]:first-of-type:hover {
+    background-color: base.$upd-btn-hover-color;
+}
+
+.update-form button[type="button"]:last-of-type {
+    background-color: base.$del-btn-color;
+}
+
+.update-form button[type="button"]:last-of-type:hover {
+    background-color: base.$del-btn-hover-color;
+}
+
+
