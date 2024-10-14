@@ -99,7 +99,29 @@
             }
         }
     }
+
+    /* Boka bord, recension och kontakt-formulär */
+    #booking-form,
+    #review-form,
+    #contact-form {
+        max-width: 500px;
+
+        input {
+            font-size: 0.9em;
+        }
+
+        button {
+            font-size: 1em;
+            padding: 10px 15px;
+        }
+
+    }
+
+    .review-block {
+        max-width: 600px;
+    }
 }
+
 
 
 
