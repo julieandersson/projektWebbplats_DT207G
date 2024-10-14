@@ -5,8 +5,8 @@
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel src/index.html src/login.html src/menu.html src/reviews.html src/loggedin.html src/contact.html src/booking.html",
-    "build": "parcel build src/index.html src/login.html src/menu.html src/reviews.html src/loggedin.html src/contact.html src/booking.html"
+    "start": "parcel src/index.html src/login.html src/menu.html src/reviews.html src/loggedin.html src/contact.html src/booking.html src/adminmenu.html src/findus.html src/messages.html src/register.html",
+    "build": "parcel build src/index.html src/login.html src/menu.html src/reviews.html src/loggedin.html src/contact.html src/booking.html src/adminmenu.html src/findus.html src/messages.html src/register.html"
   },
   "keywords": [],
   "author": "Julie Andersson",
