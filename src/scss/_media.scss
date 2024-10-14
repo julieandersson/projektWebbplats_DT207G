@@ -117,7 +117,7 @@
 
     }
 
-    /* Utskrift av recensioner och bokningar */
+    /* Utskrift av recensioner, bokningar och meddelanden */
     .review-block, .booking-block, .message-item {
         max-width: 600px;
     }
@@ -152,6 +152,116 @@
             }
         }
     }
+
+    /* STARTSIDAN */
+
+    main {
+        width: 90%;
+    }
+
+    /* Bilderna på startsidan */
+    .indexPicture {
+        width: 90%; 
+        max-width: 500px; 
+    }
+
+    /* Rubriker */
+    h1 {
+        font-size: 4.2em;
+    }
+    
+    h2 {
+        font-size: 1.6em;
+    }
+    
+    h3 {
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    /* Knapparna på startsidan */
+    #navigateToMenu,
+    #navigateToBooking {
+        width: 260px;
+        padding: 11px 13px;
+   }
+
+    /* MENY-SIDAN */
+
+    /* Bilderna vid varje kategori i menyn */
+    .category-image {
+        width: 280px;
+        margin: 10px auto;
+    }
+
+    /* Utskrift av menyn */
+    #menu-container, .menu-list {
+        padding: 20px;
+    }
+
+    /* Login, register och add dish formulär */
+    #login-form,
+    #register-form,
+    #add-dish-form {
+       max-width: 350px;
+       padding: 20px;
+
+       button {
+        font-size: 0.9em;
+       }
+    }
+
+    /* Formulär för uppdatera maträtt */
+    .update-form {
+        max-width: 280px;
+        
+    }
+
+    /* upd / del / spara / avbryt - knappar */
+    .update-btn,
+    .delete-btn,
+    .update-form button {
+        padding: 8px 9px;
+        font-size: 0.8rem;
+    }
+
+    /* meddelande som visas i vänstra hörnet i adminläge */
+    #welcome-message {
+        font-size: 0.8em;
+    }
+
+    /* Boka bord, recension och kontakt-formulär */
+    #booking-form,
+    #review-form,
+    #contact-form {
+        max-width: 350px;
+
+        input {
+            font-size: 0.9em;
+        }
+
+        button {
+            font-size: 0.9em;
+            padding: 8px 12px;
+        }
+
+    }
+
+    /* Utskrift av recensioner, bokningar och meddelanden */
+    .review-block, .booking-block, .message-item {
+        max-width: 350px;
+    }
+
+    .send-response-btn {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+
+    /* textrutan för att svara på meddelanden */
+    textarea.response-textarea {
+        height: 75px;
+    }
+
 }
 
 
