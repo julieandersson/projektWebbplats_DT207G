@@ -127,13 +127,32 @@
         padding: 10px 15px;
     }
 
-
-
-
-
-
 }
 
+/* Media queries för Mobile */
+
+@media (max-width: 599px) {
+
+    /* Footer */
+    /* Ändrar så att innehållet staplas verikalt istället */
+    footer {
+        flex-direction: column;
+        padding: 20px;
+
+        .footer-column {
+            margin: 20px 0; 
+            max-width: 100%; 
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin: 20px auto;
+            img {
+                width: 120px;
+            }
+        }
+    }
+}
 
 
 

@@ -33,7 +33,7 @@ if (loginFormElement) {
     const credentials = { username: usernameInput, password: passwordInput };
 
     try {
-      // Visa laddningsindikatorn under inloggningsprocessen
+      // Visar laddningsindikatorn under inloggningsprocessen
       showLoadingIndicator();
 
       // Skickar inloggningsuppgifterna till API:et
@@ -50,10 +50,10 @@ if (loginFormElement) {
       if (apiResponse.ok) {
         // Om inloggningen lyckades, spara token i localStorage
         localStorage.setItem("authToken", responseData.response.token);
-        // Spara användarnamnet i localStorage
+        // Sparar användarnamnet i localStorage
         localStorage.setItem("loggedInUser", usernameInput);
 
-        // Skicka användaren till den inloggade sidan
+        // Skickar användaren till den inloggade sidan
         window.location.href = "loggedin.html";
       } else {
         // Om inloggningen misslyckas, visa felmeddelandet
@@ -61,12 +61,12 @@ if (loginFormElement) {
         loginErrorMessage.style.display = "block";
       }
     } catch (error) {
-      // Visa ett generellt felmeddelande om något går fel vid inloggning
+      // Visar ett generellt felmeddelande om något går fel vid inloggning
       console.error("Inloggningen misslyckades: ", error);
       loginErrorMessage.textContent = "Något gick fel, försök igen senare.";
       loginErrorMessage.style.display = "block";
     } finally {
-      // Dölj laddningsindikatorn när inloggningsprocessen är klar
+      // Döljer laddningsindikatorn när inloggningsprocessen är klar
       hideLoadingIndicator();
     }
   });
@@ -87,14 +87,22 @@ function displayLoggedInUser() {
 const logoutLink = document.getElementById("logout-link");
 if (logoutLink) {
     logoutLink.addEventListener("click", (event) => {
-        event.preventDefault(); // Förhindra att länken omedelbart navigerar bort
+        event.preventDefault(); // Förhindrar att länken omedelbart navigerar bort
+
+        // Kontrollfråga innan utloggning
+        const confirmLogout = confirm("Är du säker på att du vill logga ut?");
+        if (confirmLogout) {
+        // Om användaren bekräftar, ta bort token och användarinformation
         localStorage.removeItem("authToken");
         localStorage.removeItem("loggedInUser");
-        window.location.href = "index.html"; // Omdirigera till startsidan
+        window.location.href = "index.html"; // Omdirigerar till startsidan
+        } else {
+          return; // Stanna kvar på sidan och gör inget om användaren avbryter utloggningen
+        }
     });
 }
   
-  // Kontrollera om användaren är inloggad och visa användarnamnet
+  // Kontrollerar om användaren är inloggad och visa användarnamnet
   window.addEventListener("DOMContentLoaded", () => {
     displayLoggedInUser();
 });
