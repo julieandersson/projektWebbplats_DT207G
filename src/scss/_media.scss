@@ -117,9 +117,21 @@
 
     }
 
-    .review-block {
+    /* Utskrift av recensioner och bokningar */
+    .review-block, .booking-block, .message-item {
         max-width: 600px;
     }
+
+    .send-response-btn {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+
+
+
+
+
 }
 
 
