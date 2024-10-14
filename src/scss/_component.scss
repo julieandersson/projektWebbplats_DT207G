@@ -3,7 +3,7 @@
 @use "base";
 @import 'form-styles'; // Importerar styling för formulär
 
-/* Meny styling för mobil*/
+/* Hamburgermeny-styling för mobil */
 nav {
     background-color: base.$header-color;
     font-family: base.$standard-font;
@@ -157,7 +157,7 @@ nav li:hover {
 }
 
 /* FORMULÄR FÖR BOKA BORD */
-
+/* extend från form-style */
 #booking-form {
     @extend .form-style;
 }
@@ -176,6 +176,7 @@ nav li:hover {
 }
 
 /* FORMULÄR FÖR ATT SKRIVA RECENSION */
+/* extend från form-style */
 
 #review-form {
     @extend .form-style;
@@ -207,6 +208,7 @@ nav li:hover {
 }
 
 /* FORMULÄR FÖR ATT SKICKA KONTAKTMEDDELANDE */
+/* extend från form-style */
 
 #contact-form {
     @extend .form-style;
@@ -297,12 +299,12 @@ nav li:hover {
     }
 }
 
-/* STYLING FÖR BOKNINGAR (använd samma styling som recensioner) */
+/* STYLING FÖR BOKNINGAR (använder samma styling som recensioner) */
 .booking-block {
     @extend .review-block;
 }
 
-/* STYLING FÖR KONTAKTMEDDELANDEN */
+/* STYLING FÖR KONTAKTMEDDELANDEN (använder samma styling som recensioner och bokningar */
 .message-item {
     @extend .review-block;
 }
@@ -338,6 +340,7 @@ textarea.response-textarea {
     gap: 10px;
 }
 
+/* Enskild styling för uppdatera och ta bort-knapp */
 .update-btn,
 .delete-btn {
     @include base.button-base;
