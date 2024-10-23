@@ -30,7 +30,7 @@
 .form-input:focus {
     outline: none;
     border: 1px solid base.$form-btn-color;
-    box-shadow: 0 0 5px base.$standard-shadow;
+    box-shadow: base.$standard-shadow;
 }
 
 .form-button {
