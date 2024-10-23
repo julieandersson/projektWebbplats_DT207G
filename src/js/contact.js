@@ -97,6 +97,8 @@ async function fetchAndDisplayMessages() {
 
         // Kolla om svaret är ok och om det finns några meddelanden
         if (response.ok && messages.length > 0) {
+            // Sortera meddelandena baserat på datumet, så att senaste meddelandet hamnar högst upp på sidan
+            messages.sort((a, b) => new Date(b.dateSent) - new Date(a.dateSent));
             // Skapa HTML-kod för att visa meddelandena i messagesContainer
             messagesContainer.innerHTML = messages
                 .map(

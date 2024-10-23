@@ -112,6 +112,8 @@ async function fetchAndDisplayBookings() {
 
         // Kolla om svaret är ok och om det finns några bokningar
         if (response.ok && bookings.length > 0) {
+            // Sortera bokningarna baserat på bokningsdatumet, så att senaste bokningen hamnar högst upp på sidan
+            bookings.sort((a, b) => new Date(b.bookingDate) - new Date(a.bookingDate));
             // Skapa HTML-kod för att visa bokningarna i bookingContainer
             bookingContainer.innerHTML = bookings
                 .map(

@@ -148,6 +148,12 @@ nav li:hover {
     text-align: center;
 }
 
+/* Felmeddelande vid logga in och skapa konto */
+#loginErrorMessage,
+#error-message {
+    text-align: center;
+}
+
 /* MEDDELANDE SOM VISAS I VÄNSTRA HÖRNET I INLOGGAT LÄGE (admin) */
 #welcome-message {
     background-color: rgb(255, 181, 117);
