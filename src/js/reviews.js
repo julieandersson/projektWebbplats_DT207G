@@ -61,7 +61,7 @@ function displayReviews(reviews) {
         `;
 
         // Lägg till recensionsblocket i reviewsContainer
-        reviewsContainer.appendChild(reviewBlock);
+        reviewsContainer.prepend(reviewBlock);
     });
 }
 
@@ -131,7 +131,7 @@ async function submitReview(event) {
             <p><strong>Betyg: ${review.rating}/5</strong></p>
             <p>${review.comment}</p>
         `;
-        reviewsContainer.appendChild(reviewBlock);
+        reviewsContainer.prepend(reviewBlock);
     }
 
     // Lägg till eventlyssnare
