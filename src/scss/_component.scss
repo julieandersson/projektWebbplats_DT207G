@@ -48,6 +48,11 @@ nav li:hover {
     text-decoration: underline;
 }
 
+nav a.active {
+    text-decoration: underline; /* Understrykning för aktiv sida */
+}
+
+
 /* Meny knapp, öppna meny */
 .menu-btn {
     display: flex;
