@@ -1,5 +1,28 @@
 "use strict";
 
+// döljer innehållet på sidan så att ingen skyddad information visas innan användarens status kontrolleras
+document.body.style.visibility = 'hidden';
+
+// hämtar användarens token från localStorage för att se om användaren är inloggad
+const token = localStorage.getItem('authToken');
+
+// listar de sidor som bara ska vara tillgängliga för inloggade admin-användare
+const protectedPages = ['loggedin.html', 'adminmenu.html', 'messages.html', 'register.html'];
+
+// kontrollerar vilken sida användaren är på genom att hämta sidans filnamn från URL:en
+const currentPage = window.location.pathname.split('/').pop(); // Exempel: "loggedin.html"
+
+// kollar om den nuvarande sidan är en skyddad admin-sida
+const isProtectedPage = protectedPages.includes(currentPage);
+
+// Om användaren försöker nå en skyddad sida och inte är inloggad (dvs. token saknas) så omdirigera till login-sidan
+if (!token && isProtectedPage) {
+    window.location.href = 'login.html';
+} else {
+    // Om användaren är inloggad eller om sidan inte är skyddad, visa innehållet
+    document.body.style.visibility = 'visible';
+}
+
 import { fetchMenu } from './menu.js'; // importerar fetchMenu funktionen i menu.js
 // Kör funktionen för att hämta menyn när DOM är redo
 document.addEventListener("DOMContentLoaded", () => {
