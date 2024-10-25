@@ -27,7 +27,7 @@ if (token && user && !sessionActive) {
 document.body.style.visibility = 'hidden';
 
 // listar de sidor som bara ska vara tillgängliga för inloggade admin-användare
-const protectedPages = ['loggedin.html', 'adminmenu.html', 'messages.html', 'register.html'];
+const protectedPages = ['loggedin.html', 'loggedin', 'adminmenu.html', 'adminmenu', 'messages.html', 'messages', 'register.html', 'register'];
 
 // kollar om den nuvarande sidan är en skyddad admin-sida
 const isProtectedPage = protectedPages.includes(currentPage);
