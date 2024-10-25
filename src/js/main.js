@@ -1,16 +1,33 @@
 "use strict";
 
-// döljer innehållet på sidan så att ingen skyddad information visas innan användarens status kontrolleras
-document.body.style.visibility = 'hidden';
+/* Om användaren kryssar ner sidan i inloggat läge, och sedan går in på sidan igen, omdirigeras hen till 
+admin-läge automatiskt */
+/* Gäller varje gång användaren än inloggad och öppnar sidan på nytt i nytt fönster */
 
-// hämtar användarens token från localStorage för att se om användaren är inloggad
+// Kontrollerar om användaren redan är inloggad när sidan laddas
 const token = localStorage.getItem('authToken');
-
-// listar de sidor som bara ska vara tillgängliga för inloggade admin-användare
-const protectedPages = ['loggedin.html', 'adminmenu.html', 'messages.html', 'register.html'];
+const user = localStorage.getItem('loggedInUser');
 
 // kontrollerar vilken sida användaren är på genom att hämta sidans filnamn från URL:en
 const currentPage = window.location.pathname.split('/').pop(); // Exempel: "loggedin.html"
+
+// Kontrollerar om sessionen är aktiv
+const sessionActive = sessionStorage.getItem('sessionActive');
+
+// Om användaren är inloggad och sessionen inte är aktiv, omdirigeras användaren till adminläget
+if (token && user && !sessionActive) {
+    // Sätter sessionen som aktiv vid omdirigering första gången
+    sessionStorage.setItem('sessionActive', 'true');
+    if (currentPage !== 'loggedin.html') {
+        window.location.href = 'loggedin.html';
+    }
+}
+
+// döljer innehållet på sidan så att ingen skyddad information visas innan användarens status kontrolleras
+document.body.style.visibility = 'hidden';
+
+// listar de sidor som bara ska vara tillgängliga för inloggade admin-användare
+const protectedPages = ['loggedin.html', 'adminmenu.html', 'messages.html', 'register.html'];
 
 // kollar om den nuvarande sidan är en skyddad admin-sida
 const isProtectedPage = protectedPages.includes(currentPage);
