@@ -5,6 +5,15 @@
 const bookingForm = document.getElementById("booking-form");
 const bookingMessage = document.getElementById("booking-message");
 const bookingDateInput = document.getElementById("bookingDate");
+const bookingRulesCheckbox = document.getElementById('booking-rules');
+const errorMessage = document.createElement('p');
+errorMessage.textContent = 'Du måste godkänna bokningsvillkoren om du vill fortsätta.';
+errorMessage.className = 'booking-error-message';
+
+// felmeddelande för checkbox
+if (bookingRulesCheckbox) {
+    bookingRulesCheckbox.parentNode.appendChild(errorMessage);
+}
 
 if (bookingDateInput) {
 /* Använder Flatpickr på bookingDate-fältet med inställningar för öppettider så att användaren inte kan välja en tid utanför
@@ -32,6 +41,14 @@ flatpickr(bookingDateInput, {
 if (bookingForm) {
     bookingForm.addEventListener("submit", async (event) => {
         event.preventDefault(); // Förhindrar standardformulärets beteende
+
+        // Kontrollerar om checkboxen är markerad innan bokningen slutförs
+        if (!bookingRulesCheckbox.checked) {
+            errorMessage.style.display = 'block';
+            return; // Avbryt funktionen här om checkboxen inte är markerad
+        } else {
+            errorMessage.style.display = 'none'; // Gömmer felmeddelandet om allt är korrekt
+        }
 
         // Töm eventuella tidigare meddelanden
         bookingMessage.textContent = '';

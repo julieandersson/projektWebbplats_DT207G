@@ -153,6 +153,13 @@ nav a.active {
     text-align: center;
 }
 
+.booking-error-message {
+    color: red;
+    font-size: 1em;
+    display: none;
+    margin-top: 5px;
+}
+
 /* Felmeddelande vid logga in och skapa konto */
 #loginErrorMessage,
 #error-message {
